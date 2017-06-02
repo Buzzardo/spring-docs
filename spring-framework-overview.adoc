@@ -1,0 +1,84 @@
+= Spring Framework Overview
+
+The Spring framework is a tool to simplify and accelerate development of enterprise applications for Java developers. It is an addition to rather than a replacement of or competitor to J2EE.
+
+== Design Goals
+
+The overarching goal of Spring is to enable Java developers to get more done in less time with less frustration. To that end, the Spring framework incorporates the following design goals:
+
+* Allow easy extension and customization
+* Incorporate best practices from the software development community
+* Guarantee both a smooth upgrade path and backward compatibility
+* Provide convenient ways to deploy applications to desktops, servers, and the cloud
+* Provide a consistent way to use libraries within projects
+* Use granularity to keep the Spring footprint in any given project as small as possible
+
+=== Programming Model
+
+{JB} Juergen mentioned the programming model. I agree that it would be worth briefly describing.
+
+=== Patterns Used by Spring
+
+{JB} Someone (Juergen?) also mentioned design patterns. Do we want to mention the patterns that Spring intentionally or at least commonly uses?
+
+== Framework Modules
+
+The Spring Framework consists of features organized into 18 modules. These modules are grouped into Core Container, Data Access/Integration, Web, AOP (Aspect Oriented Programming), Instrumentation, Messaging, and Test, as shown in the following diagram.
+
+image::http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/images/spring-overview.png[]
+
+Figure 1. Overview of the Spring Framework
+The following sections list the available modules for each feature along with their artifact names and the topics they cover. Artifact names correlate to artifact IDs used in http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/overview.html#dependency-management[Dependency Management tools].
+
+=== Core Container
+
+The http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-introduction[Core Container] consists of the spring-core, spring-beans, spring-context, spring-context-support, and spring-expression (Spring Expression Language) modules.
+
+The spring-core and spring-beans modules http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/overview.html#overview-modules[provide the fundamental parts of the framework], including the IoC and Dependency Injection features. The BeanFactory is a sophisticated implementation of the factory pattern. It removes the need for programmatic singletons and allows you to decouple the configuration and specification of dependencies from your actual program logic.
+
+The http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/core.html#context-introduction[Context] (spring-context) module builds on the solid base provided by the http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-introduction[Core and Beans] modules: it is a means to access objects in a framework-style manner that is similar to a JNDI registry. The Context module inherits its features from the Beans module and adds support for internationalization (using, for example, resource bundles), event propagation, resource loading, and the transparent creation of contexts by, for example, a Servlet container. The Context module also supports Java EE features such as EJB, JMX, and basic remoting. The ApplicationContext interface is the focal point of the Context module. spring-context-support provides support for integrating common third-party libraries into a Spring application context, in particular for caching (EhCache, JCache) and scheduling (CommonJ, Quartz).
+
+The spring-expression module provides a powerful http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/core.html#expressions[Expression Language] for querying and manipulating an object graph at runtime. It is an extension of the unified expression language (unified EL) as specified in the JSP 2.1 specification. The language supports setting and getting property values, property assignment, method invocation, accessing the content of arrays, collections and indexers, logical and arithmetic operators, named variables, and retrieval of objects by name from Spring’s IoC container. It also supports list projection and selection as well as common list aggregations.
+
+=== AOP and Instrumentation
+The spring-aop module provides an AOP Alliance-compliant aspect-oriented programming implementation allowing you to define, for example, method interceptors and pointcuts to cleanly decouple code that implements functionality that should be separated. Using source-level metadata functionality, you can also incorporate behavioral information into your code, in a manner similar to that of .NET attributes.
+
+The separate spring-aspects module provides integration with AspectJ.
+
+The spring-instrument module provides class instrumentation support and classloader implementations to be used in certain application servers. The spring-instrument-tomcat module contains Spring’s instrumentation agent for Tomcat.
+
+=== Messaging
+Spring Framework 4 includes a spring-messaging module with key abstractions from the Spring Integration project such as Message, MessageChannel, MessageHandler, and others to serve as a foundation for messaging-based applications. The module also includes a set of annotations for mapping messages to methods, similar to the Spring MVC annotation based programming model.
+
+=== Data Access/Integration
+The Data Access/Integration layer consists of the JDBC, ORM, OXM, JMS, and Transaction modules.
+
+The spring-jdbc module provides a http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#jdbc-introduction[JDBC]-abstraction layer that removes the need to do tedious JDBC coding and parsing of database-vendor specific error codes.
+
+The spring-tx module supports http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#transaction[programmatic and declarative transaction] management for classes that implement special interfaces and for all your POJOs (Plain Old Java Objects).
+
+The spring-orm module provides integration layers for popular http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#orm-introduction[object-relational mapping] APIs, including http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#orm-jpa[JPA] and http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#orm-hibernate[Hibernate]. Using the spring-orm module you can use these O/R-mapping frameworks in combination with all of the other features Spring offers, such as the simple declarative transaction management feature mentioned previously.
+
+The spring-oxm module provides an abstraction layer that supports http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#oxm[Object/XML mapping] implementations such as JAXB, Castor, JiBX and XStream. {JB} Do we want to add a paragraph about annotation-based implementations?
+
+The spring-jms module (http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/integration.html#jms[Java Messaging Service]) contains features for producing and consuming messages. Since Spring Framework 4.1, it provides integration with the spring-messaging module.
+
+=== Web
+The Web layer consists of the spring-web, spring-webmvc and spring-websocket modules.
+
+The spring-web module provides basic web-oriented integration features such as multipart file upload functionality and the initialization of the IoC container using Servlet listeners and a web-oriented application context. It also contains an HTTP client and the web-related parts of Spring’s remoting support.
+
+The spring-webmvc module (also known as the Web-Servlet module) contains Spring’s model-view-controller (http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-introduction[MVC]) and REST Web Services implementation for web applications. Spring’s MVC framework provides a clean separation between domain model code and web forms and integrates with all of the other features of the Spring Framework.
+
+=== Test
+The spring-test module supports the http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/testing.html#unit-testing[unit testing] and http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/testing.html#integration-testing[integration testing] of Spring components with JUnit or TestNG. It provides consistent http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/testing.html#testcontext-ctx-management[loading] of Spring ApplicationContexts and http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/testing.html#testcontext-ctx-management-caching[caching] of those contexts. It also provides http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/testing.html#mock-objects[mock objects] that you can use to test your code in isolation.
+
+== Usage Scenarios
+
+The building blocks described previously make Spring a logical choice in many scenarios, from embedded applications that run on resource-constrained devices to full-fledged enterprise applications that use Spring’s transaction management functionality and web framework integration.
+
+{JB} I think we all agree that the images are problematic, though perhaps for different reasons. We need to identify the scenarios, and then I'll make new images and descriptions for the new scenarios.
+
+== For More Information
+
+The Spring web site is http://spring.io. The top of the Spring documentation set is http://docs.spring.io. Spring has a number of https://spring.io/guides[getting started guides], each of which is meant to be worked through in 15 to 30 minutes. Spring has a curated list of questions and answers on Stack Overflow at https://spring.io/questions
