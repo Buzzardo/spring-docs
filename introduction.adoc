@@ -1,0 +1,27 @@
+== Spring Framework Overview
+
+The Spring Framework is one part of the larger Spring project (which is itself a family of projects). The Spring Framework provides all the tools needed to create an application, at any scale from the hobbyist to the enterprise. One goal of the Spring Framework is to enable Java developers to create enterprise applications quickly. An experienced Spring developer can create a small application in minutes. Nearly all applications are more complex than that, but it is possible.
+
+Another goal is to provide everything beyond the Java language that a Java developer needs to create an enterprise application. To that end, the Spring Framework lets developers:
+
+* Use a single development model that applies to the whole application.
+* Create, store, and retrieve data from multiple different databases and kinds of databases.
+* Make remote calls to other systems, including the ability to create an application by pulling together calls to different microservices.
+* Integrate with many other technologies, each widely used in its respective niche.
+
+Spring also offers support for other languages in the Java family, notably Groovy and Kotlin. The Spring Framework's goal is to provide everything Java developers need on the way to developing an application. If the path goes through Groovy and Kotlin, Spring can be there, too.
+
+In other words, Spring tries to help developers avoid having to ask, "What do I have to add to achieve my goals?" At most, you should need to add another component of Spring, and that can be done by creating the necessary entry in your dependency management system.
+
+Another goal is to let developers target many different platforms. The Spring Framework lets developers create applications that work on:
+
+* The cloud.
+* Application servers.
+* Devices running embedded application servers.
+* Embedded devices.
+* Mobile devices.
+
+It's reasonable to think of the Spring Framework as a "full stack" development framework. It lets you put together the data, the business logic, and the user interface without having to separately manage each piece. In other words, the Spring Framework provides both the tools to build an application and the glue to hold all the parts of the application together.
+
+[NOTE]
+The Spring Framework intentionally doesn't do some things, including provide help with how to deploy an application, how to manage dependencies, how to build an application, and other choices that are "beyond the code" of an application. However, Spring Boot does offer support for many of those tasks. In short, the Spring Framework focuses on letting developers create the application. Spring Boot takes things to the next level.
