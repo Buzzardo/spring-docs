@@ -426,57 +426,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_spring_framework_overview">Spring Framework Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Spring Framework is one part of the larger Spring project (which is itself a family of projects). The Spring Framework provides all the tools needed to create an application, at any scale from the hobbyist to the enterprise. One goal of the Spring Framework is to enable Java developers to create enterprise applications quickly. An experienced Spring developer can create a small application in minutes. Nearly all applications are more complex than that, but it is possible.</p>
+<p>Spring provides everything beyond the Java language that a Java developer needs to create an enterprise application. The Spring Framework also lets you go beyond Java, to other languages in the Java family, notably Groovy and Kotlin. The Spring Framework&#8217;s goal is to provide everything Java developers need on the way to developing an application, even if your project&#8217;s path goes through Groovy and Kotlin.</p>
 </div>
 <div class="paragraph">
-<p>Another goal is to provide everything beyond the Java language that a Java developer needs to create an enterprise application. To that end, the Spring Framework lets developers:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Use a single development model that applies to the whole application.</p>
-</li>
-<li>
-<p>Create, store, and retrieve data from multiple different databases and kinds of databases.</p>
-</li>
-<li>
-<p>Make remote calls to other systems, including the ability to create an application by pulling together calls to different microservices.</p>
-</li>
-<li>
-<p>Integrate with many other technologies, each widely used in its respective niche.</p>
-</li>
-</ul>
+<p>The Spring Framework provides the means to create an application, at any level from the hobbyist to the enterprise. The Spring Framework lets Java you create enterprise applications quickly. You can create a small application in minutes. Also, you don&#8217;t have to know everything about Spring to get started. Spring is designed to let you jump in and get started immediately. {JB: Do we want to mention Spring Boot (and link to it) here? In other words, do we want to stay exclusively with the Framework in this document?} If you want to jump right in and get started, we suggest using Spring Boot and creating a project with the start.spring.io[Spring Initializr].</p>
 </div>
 <div class="paragraph">
-<p>Spring also offers support for other languages in the Java family, notably Groovy and Kotlin. The Spring Framework&#8217;s goal is to provide everything Java developers need on the way to developing an application. If the path goes through Groovy and Kotlin, Spring can be there, too.</p>
+<p>We also suggest becoming involved with the Spring community. Spring has a large and active community of developers who use it, share their ideas about how to use it to best effect, and help one another get the most from it. You can find part of the community at forum.spring.io. You can also find questions and answers at spring.io/questions (a StackOverflow page). You can find still more parts of the Spring community by searching for them with your favorite search engine.</p>
 </div>
 <div class="paragraph">
-<p>In other words, Spring tries to help developers avoid having to ask, "What do I have to add to achieve my goals?" At most, you should need to add another component of Spring, and that can be done by creating the necessary entry in your dependency management system.</p>
+<p>The Spring Framework is one part of the larger Spring ecosystem {JB: ecosystem or portfolio? Juergen?}. When Spring was first created, what is now the Spring Framework was all of it. Since then, a number of other {JB: projects/modules?} have been added to Spring. You can think of the Spring Framework as the core of a group of related {JB: projects/modules?} that collectively provide all the features of Spring. You can add the other parts as needed, depending on the exact needs of your project. For example, you can integrate with several SQL and NoSQL databases, integrate with several different front end packages, choose to use one of a few messaging queues, choose to use REST (with or without HATEOAS), and so on. By letting you choose which parts to use, Spring keeps its footprint within your project to a minimum.</p>
 </div>
 <div class="paragraph">
-<p>Another goal is to let developers target many different platforms. The Spring Framework lets developers create applications that work on:</p>
+<p>The Spring Framework itself is also modular, so that you can pick and choose which pieces to use. The following image shows the modules within the Spring Framework.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The cloud.</p>
-</li>
-<li>
-<p>Application servers.</p>
-</li>
-<li>
-<p>Devices running embedded application servers.</p>
-</li>
-<li>
-<p>Embedded devices.</p>
-</li>
-<li>
-<p>Mobile devices.</p>
-</li>
-</ul>
+<div id="img-FrameworkModules" class="imageblock">
+<div class="content">
+<a class="image" href="https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/spring-overview.png"><img src="https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/spring-overview.png" alt="Spring Framework Modules"></a>
+</div>
+<div class="title">Figure 1. Modules within the Spring Framework</div>
 </div>
 <div class="paragraph">
-<p>It&#8217;s reasonable to think of the Spring Framework as a "full stack" development framework. It lets you put together the data, the business logic, and the user interface without having to separately manage each piece. In other words, the Spring Framework provides both the tools to build an application and the glue to hold all the parts of the application together.</p>
+<p>image:https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/images/spring-overview.png</p>
+</div>
+<div class="paragraph">
+<p>The Spring Framework lets you target many different platforms. The Spring Framework lets you create applications that work on the cloud, on application servers, and on devices running embedded application servers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -490,12 +464,43 @@ The Spring Framework intentionally doesn&#8217;t do some things, including provi
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_principles_of_spring">Principles of Spring</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Embrace best practices: The Spring Framework uses the best practices in software development at every opportunity, which makes it easier for you to embrace best practices in your projects, too.</p>
+</li>
+<li>
+<p>Non-invasive: The Spring Framework won&#8217;t force you to adopt a particular programming style, especially if you embrace best practices.</p>
+</li>
+<li>
+<p>Flexible: Spring supports a wide variety of application servers and deployment models and always tries to be lenient with its minimal requirements for Java version and third party libraries.</p>
+</li>
+<li>
+<p>Open for customization: The Spring Framework has sane configuration defaults and tries not to be too opinionated (Spring Boot has stronger opinions), but it also provides extensions points and ways of customizing configuration that integrate nicely in your application. You can often implement interfaces and declare them as components to add new functionalities, or you can tweak the configuration without having to redefine/override everything (again, the Spring Framework is non-invasive). On that subject, the Spring Framework integrates with numerous libraries and technologies directly or provides extension points so that you can integrate with your the libraries you choose.</p>
+</li>
+<li>
+<p>Easy path to upgrade: The Spring Framework always tries to provide the smoothest possible upgrade path to the next Spring version. The Spring Framework tries to have no backwards incompatible changes and to provide early warnings about deprecations. The Spring Framework also tries to provide the smoothest possible upgrade path to the next version of Java. You can use the latest Java features with Spring, but using the latest Java version is not a hard requirement. This also shows in the Spring Framework&#8217;s release management: Minor versions contain new features, while major versions are often about new features and baseline upgrades, but the Spring Framework avoids breaking or otherwise drastic changes from one version to the next.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_next_section">Next Section</h3>
+<div class="paragraph">
+<p>My original idea was three pieces: What is it? What does it do? How does it do it?</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ve gotten a start on the first two questions. The next (probably large) chunk should answer "How does it do it?" That is, we should launch into an overview of the Spring Framework&#8217;s modules, the benefits of each, which ones are required or optional, and so on.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-08 15:35:33 CDT
+Last updated 2017-06-09 14:54:21 CDT
 </div>
 </div>
 </body>
