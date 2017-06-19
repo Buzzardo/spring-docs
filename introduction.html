@@ -426,10 +426,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_spring_framework_overview">Spring Framework Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring is an open source project project with a large and active developer community. It provides Java developers with the means to quickly create an application, at any level from hobby applications to mission-critical systems. You can create a small application in minutes and quickly create larger applications. Also, you don&#8217;t have to know everything about Spring to get started. Spring is designed to let you jump in and get started immediately. In essence, Spring provides everything beyond the Java language that you need to create a modern application. Spring also lets you go beyond Java to other languages in the Java family, notably Groovy and Kotlin.</p>
+<p>Spring is an open source project with a large and active developer community. Spring makes the development of applications quick and easy. You can create an application in minutes. It does so by providing everything you need beyond the Java language itself. It also includes support for other members of the Java family, notably Groovy and Kotlin.</p>
 </div>
 <div class="paragraph">
-<p>Spring is built with both scaling and longevity in mind. Spring supports a range of application scales, from a personal utility you might create to run just once on your local computer to applications that have long and complex life cycles and that run on many servers or on many nodes in the cloud. Spring also lets you easily create applications that have long life spans. Spring avoids breaking changes and offers a "long tail" of backwards compatibility, including compatibility with older JDKs and third-party libraries. Consequently, developers can continue to modify a Spring application for years after its initial release without having to rewrite it to accommodate changes in Spring.</p>
+<p>Spring supports a wide range of applications in terms of scale and longevity. You can create one-use utility programs that you store on your local computer or create cloud applications that will run for years. Spring has extensive backwards compatibility and avoids breaking changes between versions, so that a Spring application continues to run even as versions of Spring and the JDK advance.</p>
+</div>
+<div class="paragraph">
+<p>Spring makes it easy to get started. You don&#8217;t have to know everything about Spring in order to start creating a Spring application. Due to its modular nature, you can learn about only the bits and pieces you need to use.</p>
 </div>
 <div class="sect2">
 <h3 id="_what_we_mean_by_spring">What We Mean by "Spring"</h3>
@@ -446,13 +449,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Tip</div>
 </td>
 <td class="content">
-The Spring Framework use a rich dependency injection system that allows languages such as Kotlin and Groovy to be first-class citizens of the Spring Framework.
+The Spring Framework uses a rich dependency injection system that allows languages such as Kotlin and Groovy to be first-class citizens of the Spring Framework.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Partly for historical reasons (Spring has always been focused largely on web applications) and partly for technical reasons (such as support for the HTTP protocol, dispatching, and binding), the Spring Framework includes the Spring Web Framework. It is possible to exclude the Spring Web Framework if you happen to be writing an application that doesn&#8217;t need it. The other core bits of the framework, such as dependency injection, transaction management, and messaging, can also be excluded. Again, Spring and the Spring Framework are modular, letting you pick only the bits you need.</p>
+<p>Partly for historical reasons (Spring has always been focused largely on web applications) and partly for technical reasons (such as support for the HTTP protocol, dispatching, and binding), the Spring Framework includes foundational web support. It is possible to exclude the web module if you happen to be writing an application that doesn&#8217;t need it. The other core bits of the framework, such as dependency injection, transaction management, and messaging, can also be excluded. Again, Spring and the Spring Framework are modular, letting you pick only the bits you need.</p>
 </div>
 </div>
 <div class="sect2">
@@ -520,7 +523,10 @@ The Spring Framework use a rich dependency injection system that allows language
 </div>
 </div>
 <div class="sect2">
-<h3 id="_principles_of_spring">Principles of Spring</h3>
+<h3 id="_how_does_spring_work">How Does Spring Work?</h3>
+<div class="paragraph">
+<p>{JB: This is the "How does it do it?" section}</p>
+</div>
 <div class="paragraph">
 <p>Spring embraces a number of core principles that have been chosen to enable rapid development of excellent applications:</p>
 </div>
@@ -572,13 +578,22 @@ The Spring Framework intentionally doesn&#8217;t do some things, including provi
 </div>
 </div>
 <div class="sect2">
+<h3 id="_where_s_is_spring">Where&#8217;s is Spring?</h3>
+<div class="paragraph">
+<p>Github, Jira, the Questions Page, Committer&#8217;s Guidelines, Coding Conventions</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_questions">Questions?</h3>
 <div class="paragraph">
 <p>Spring has a  <a href="https://spring.io/questions">Stack Overflow page</a> where you can ask questions and find other people&#8217;s questions and answers.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_next_section">Next Section</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_section_jb_kill_this">Next Section {JB: Kill this}</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>{JB: My original idea was three pieces: What is it? What does it do? How does it do it? This section should answer the "How does it do it?" question. The previous part of this document should have answered the first two questions.</p>
 </div>
@@ -588,10 +603,9 @@ The Spring Framework intentionally doesn&#8217;t do some things, including provi
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-16 15:52:15 CDT
+Last updated 2017-06-19 09:17:06 CDT
 </div>
 </div>
 </body>
