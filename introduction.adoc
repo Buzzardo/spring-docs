@@ -8,11 +8,11 @@ Spring makes it easy to get started. You don't have to know everything about Spr
 
 === What We Mean by "Spring"
 
-The term, "Spring," means different things in different contexts. People often use it to refer to the entire Spring family of projects. Other times, they mean the Spring Framework, which is one project within the Spring family of projects. Still other times, they mean the Spring core container (which is one of the essential features of the Spring framework). This document focuses on the Spring Framework.
+The term, "Spring," means different things in different contexts. People often use it to refer to the entire Spring family of projects. Other times, they mean the Spring Framework, which is where Spring started. Still other times, they mean the Spring core container (which is one of the essential features of the Spring Framework). This document focuses on the Spring Framework.
 
 The Spring Framework is the heart of the Spring family of projects. The other projects use the Spring Framework. The Spring Framework consists of two essential pieces: the core container and the dependency injection mechanism. It also provides a number of optional (though very often used) features: the Spring configuration model, foundational support for applications with various kinds of architectures (such as messaging applications or web applications), support for transactional data, Spring MVC (for working with servlet containers), and Spring Web Flux (for working with reactive streams).
 
-Both Spring and the Spring Framework are highly modular. Within Spring, you can include only the projects you need. Within the Spring Framework, you can exclude the features you don't need (except for the core container and the dependency injection system).
+The Spring Framework is highly modular. You can include only the modules you need. The same is true for the whole of Spring. Your project should include only the Spring projects that it needs. Every Spring application includes the Spring Framework, because the Spring Framework is the core of Spring.
 
 === History of the Spring Framework
 
