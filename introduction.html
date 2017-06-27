@@ -440,16 +440,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The term, "Spring," means different things in different contexts. People often use it to refer to the entire Spring family of projects. Other times, they mean the Spring Framework, which is where Spring started. Still other times, they mean the Spring core container (which is one of the essential features of the Spring Framework). This document focuses on the Spring Framework.</p>
 </div>
 <div class="paragraph">
-<p>The Spring Framework is the heart of the Spring family of projects. The other projects use the Spring Framework. The Spring Framework consists of two essential pieces: the core container and the dependency injection mechanism. It also provides a number of optional (though very often used) features: the Spring configuration model, foundational support for applications with various kinds of architectures (such as messaging applications or web applications), support for transactional data, Spring MVC (for working with servlet containers), and Spring Web Flux (for working with reactive streams).</p>
+<p>The Spring Framework is the heart of the Spring family of projects. The other projects use the Spring Framework. The Spring Framework consists of two essential pieces: the core container and the dependency injection mechanism. It also provides a number of optional (though very often used) features: the Spring configuration model, foundational support for applications with various kinds of architectures (such as messaging applications or web applications), support for transactional data, Spring MVC (classic servlet-based web applications), and Spring Web Flux (reactive web applications).</p>
 </div>
 <div class="paragraph">
 <p>The Spring Framework is highly modular. You can include only the modules you need. The same is true for the whole of Spring. Your project should include only the Spring projects that it needs. Every Spring application includes the Spring Framework, because the Spring Framework is the core of Spring.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_history_of_the_spring_framework">History of the Spring Framework</h3>
+<h3 id="_history_of_spring_and_the_spring_framework">History of Spring and the Spring Framework</h3>
 <div class="paragraph">
-<p>Spring came into being as a response to the first Java EE specifications. Rod Johnson perceived a need for a set of tools that would enable making applications with the Java EE specifications. His early work became Spring. The Spring Framework is the original parts of Spring. Other projects have arisen over time to add particular sets of functionality, so that Spring is now a family of projects, with the Spring Framework at its core.</p>
+<p>Spring came into being as a response to the first Java EE specifications. The Spring Framework is the original parts of Spring. Other projects have arisen over time to add particular sets of functionality, so that Spring is now a family of projects, with the Spring Framework at its core.</p>
 </div>
 <div class="paragraph">
 <p>The Spring Framework integrates with the following Java EE specifications.</p>
@@ -457,63 +457,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Dependency Injection (<a href="https://www.jcp.org/en/jsr/detail?id=330">JSR 330</a>)</p>
-</li>
-<li>
-<p>Common Annotations (<a href="https://jcp.org/en/jsr/detail?id=250">JSR 250</a>)</p>
-</li>
-<li>
-<p>Servlet API (<a href="https://jcp.org/en/jsr/detail?id=340">JSR 340</a>)</p>
-</li>
-<li>
-<p>Bean Validation (<a href="https://jcp.org/en/jsr/detail?id=303">JSR 303</a>)</p>
-</li>
-<li>
 <p>JPA (<a href="https://jcp.org/en/jsr/detail?id=338">JSR 338</a>)</p>
 </li>
 <li>
 <p>JMS (<a href="https://jcp.org/en/jsr/detail?id=914">JSR 914</a>)</p>
 </li>
 <li>
-<p>JSON Binding API (<a href="https://jcp.org/en/jsr/detail?id=367">JSR 367</a>)</p>
+<p>Servlet API (<a href="https://jcp.org/en/jsr/detail?id=340">JSR 340</a>)</p>
 </li>
 <li>
 <p>WebSockets (<a href="https://www.jcp.org/en/jsr/detail?id=356">JSR 356</a>)</p>
 </li>
+<li>
+<p>JSON Binding API (<a href="https://jcp.org/en/jsr/detail?id=367">JSR 367</a>)</p>
+</li>
+<li>
+<p>Bean Validation (<a href="https://jcp.org/en/jsr/detail?id=303">JSR 303</a>)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>As of version 5.0, the Spring Framework also integrates with <a href="https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/README.md#specification">Reactive Streams</a>.</p>
+<p>The Spring Framework also supports use of the Dependency Injection (<a href="https://www.jcp.org/en/jsr/detail?id=330">JSR 330</a>) and Common Annotations (<a href="https://jcp.org/en/jsr/detail?id=250">JSR 250</a>) specifications.</p>
 </div>
 <div class="paragraph">
-<p>Spring continues to innovate, always with the goal of making Java development as easy and as fast as possible. In recent years, Spring has added support for the cloud, NoSQL, Big Data, and other modern trends in software development. The long-term goal of Spring continues to be letting Java developers quickly and easily build applications.</p>
+<p>Spring continues to innovate. In recent years, Spring Boot has become a widely adopted way to create a Spring application. Spring Boot offers a full-stack framework for rapid development of modern applications. Some of that speed comes from Spring Boot&#8217;s way of offering an opinionated (though its opinions aren&#8217;t binding) way to create an application, whether for deployment to web servers or for deployment to the cloud. In addition to Spring Boot, other Spring projects have sprung up over time, including Spring Security, Spring Data, Spring Cloud, Spring Batch, and several others. The goal of all the projects in Spring continues to be letting Java developers quickly and easily build applications.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_spring_the_big_picture">Spring: The Big Picture</h3>
+<h3 id="_spring_principles">Spring Principles</h3>
 <div class="paragraph">
-<p>The following image shows the major Spring projects and reveals the place of the Spring Framework within the larger family of Spring projects.</p>
-</div>
-<div class="paragraph">
-<p>{JB: I made a place-holder image.}</p>
-</div>
-<div id="img-SpringProjects" class="imageblock">
-<div class="content">
-<a class="image" href="http://www.bryantcs.com/spring.png"><img src="http://www.bryantcs.com/spring.png" alt="Projects within Spring"></a>
-</div>
-<div class="title">Figure 1. Projects within Spring</div>
-</div>
-<div class="paragraph">
-<p>{JB: Talk about "full stack" - family of projects - mention Spring Boot} If you want to jump right in and get started, we suggest using Spring Boot and creating a project with the <a href="http://start.spring.io">Spring Initializr</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_how_does_spring_work">How Does Spring Work?</h3>
-<div class="paragraph">
-<p>{JB: This is the "How does it do it?" section}</p>
-</div>
-<div class="paragraph">
-<p>Spring embraces a number of core principles that have been chosen to enable rapid development of excellent applications:</p>
+<p>Spring and the Spring Framework embrace a number of core principles that have been chosen to enable rapid development of excellent applications:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -533,6 +506,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Easy path to upgrade: The Spring Framework always tries to provide the smoothest possible upgrade path to the next Spring version. The Spring Framework tries to have no backwards incompatible changes and to provide early warnings about deprecations. The Spring Framework also tries to provide the smoothest possible upgrade path to the next version of Java. You can use the latest Java features with Spring, but using the latest Java version is not a hard requirement. This also shows in the Spring Framework&#8217;s release management: Minor versions contain new features, while major versions are often about new features and baseline upgrades, but the Spring Framework avoids breaking or otherwise drastic changes from one version to the next.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_the_big_picture">Spring: The Big Picture</h3>
+<div class="paragraph">
+<p>The following image shows the major Spring projects and reveals the place of the Spring Framework within the larger family of Spring projects.</p>
+</div>
+<div class="paragraph">
+<p>{JB: I made a place-holder image.}</p>
+</div>
+<div id="img-SpringProjects" class="imageblock">
+<div class="content">
+<a class="image" href="http://www.bryantcs.com/spring.png"><img src="http://www.bryantcs.com/spring.png" alt="Projects within Spring"></a>
+</div>
+<div class="title">Figure 1. Projects within Spring</div>
+</div>
+<div class="paragraph">
+<p>{JB: Talk about "full stack" - family of projects - mention Spring Boot} If you want to jump right in and get started, we suggest using Spring Boot and creating a project with the <a href="http://start.spring.io">Spring Initializr</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -563,7 +554,7 @@ The Spring Framework intentionally doesn&#8217;t do some things, including provi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_where_s_is_spring">Where&#8217;s is Spring?</h3>
+<h3 id="_where_is_spring">Where is Spring?</h3>
 <div class="paragraph">
 <p>Github, Jira, the Questions Page, Committer&#8217;s Guidelines, Coding Conventions</p>
 </div>
@@ -576,21 +567,10 @@ The Spring Framework intentionally doesn&#8217;t do some things, including provi
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_next_section_jb_kill_this">Next Section {JB: Kill this}</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>{JB: My original idea was three pieces: What is it? What does it do? How does it do it? This section should answer the "How does it do it?" question. The previous part of this document should have answered the first two questions.</p>
-</div>
-<div class="paragraph">
-<p>We&#8217;ve gotten a start on the first two questions. The next (probably large) chunk should answer "How does it do it?" That is, we should launch into an overview of the Spring Framework&#8217;s modules, the benefits of each, which ones are required or optional, and so on. }</p>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-19 12:49:09 CDT
+Last updated 2017-06-27 13:46:34 CDT
 </div>
 </div>
 </body>

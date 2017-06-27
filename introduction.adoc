@@ -10,28 +10,36 @@ Spring makes it easy to get started. You don't have to know everything about Spr
 
 The term, "Spring," means different things in different contexts. People often use it to refer to the entire Spring family of projects. Other times, they mean the Spring Framework, which is where Spring started. Still other times, they mean the Spring core container (which is one of the essential features of the Spring Framework). This document focuses on the Spring Framework.
 
-The Spring Framework is the heart of the Spring family of projects. The other projects use the Spring Framework. The Spring Framework consists of two essential pieces: the core container and the dependency injection mechanism. It also provides a number of optional (though very often used) features: the Spring configuration model, foundational support for applications with various kinds of architectures (such as messaging applications or web applications), support for transactional data, Spring MVC (for working with servlet containers), and Spring Web Flux (for working with reactive streams).
+The Spring Framework is the heart of the Spring family of projects. The other projects use the Spring Framework. The Spring Framework consists of two essential pieces: the core container and the dependency injection mechanism. It also provides a number of optional (though very often used) features: the Spring configuration model, foundational support for applications with various kinds of architectures (such as messaging applications or web applications), support for transactional data, Spring MVC (classic servlet-based web applications), and Spring Web Flux (reactive web applications).
 
 The Spring Framework is highly modular. You can include only the modules you need. The same is true for the whole of Spring. Your project should include only the Spring projects that it needs. Every Spring application includes the Spring Framework, because the Spring Framework is the core of Spring.
 
-=== History of the Spring Framework
+=== History of Spring and the Spring Framework
 
-Spring came into being as a response to the first Java EE specifications. Rod Johnson perceived a need for a set of tools that would enable making applications with the Java EE specifications. His early work became Spring. The Spring Framework is the original parts of Spring. Other projects have arisen over time to add particular sets of functionality, so that Spring is now a family of projects, with the Spring Framework at its core.
+Spring came into being as a response to the first Java EE specifications. The Spring Framework is the original parts of Spring. Other projects have arisen over time to add particular sets of functionality, so that Spring is now a family of projects, with the Spring Framework at its core.
 
 The Spring Framework integrates with the following Java EE specifications.
 
-* Dependency Injection (https://www.jcp.org/en/jsr/detail?id=330[JSR 330])
-* Common Annotations (https://jcp.org/en/jsr/detail?id=250[JSR 250])
-* Servlet API (https://jcp.org/en/jsr/detail?id=340[JSR 340])
-* Bean Validation (https://jcp.org/en/jsr/detail?id=303[JSR 303])
 * JPA (https://jcp.org/en/jsr/detail?id=338[JSR 338])
 * JMS (https://jcp.org/en/jsr/detail?id=914[JSR 914])
-* JSON Binding API (https://jcp.org/en/jsr/detail?id=367[JSR 367])
+* Servlet API (https://jcp.org/en/jsr/detail?id=340[JSR 340])
 * WebSockets (https://www.jcp.org/en/jsr/detail?id=356[JSR 356])
+* JSON Binding API (https://jcp.org/en/jsr/detail?id=367[JSR 367])
+* Bean Validation (https://jcp.org/en/jsr/detail?id=303[JSR 303])
 
-As of version 5.0, the Spring Framework also integrates with https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/README.md#specification[Reactive Streams].
+The Spring Framework also supports use of the Dependency Injection (https://www.jcp.org/en/jsr/detail?id=330[JSR 330]) and Common Annotations (https://jcp.org/en/jsr/detail?id=250[JSR 250]) specifications.
 
-Spring continues to innovate, always with the goal of making Java development as easy and as fast as possible. In recent years, Spring has added support for the cloud, NoSQL, Big Data, and other modern trends in software development. The long-term goal of Spring continues to be letting Java developers quickly and easily build applications.
+Spring continues to innovate. In recent years, Spring Boot has become a widely adopted way to create a Spring application. Spring Boot offers a full-stack framework for rapid development of modern applications. Some of that speed comes from Spring Boot's way of offering an opinionated (though its opinions aren't binding) way to create an application, whether for deployment to web servers or for deployment to the cloud. In addition to Spring Boot, other Spring projects have sprung up over time, including Spring Security, Spring Data, Spring Cloud, Spring Batch, and several others. The goal of all the projects in Spring continues to be letting Java developers quickly and easily build applications.
+
+=== Spring Principles
+
+Spring and the Spring Framework embrace a number of core principles that have been chosen to enable rapid development of excellent applications:
+
+* Best practices: The Spring Framework uses the best practices in software development at every opportunity, which makes it easier for you to embrace best practices in your projects, too.
+* Non-invasive: The Spring Framework won't force you to adopt a particular programming style, especially if you embrace best practices.
+* Flexible: Spring supports a wide variety of application servers and deployment models and always tries to be lenient with its minimal requirements for Java version and third party libraries.
+* Open for customization: The Spring Framework has sane configuration defaults and tries not to be too opinionated (Spring Boot has stronger opinions), but it also provides extensions points and ways of customizing configuration that integrate nicely in your application. You can often implement interfaces and declare them as components to add new functionalities, or you can tweak the configuration without having to redefine/override everything (again, the Spring Framework is non-invasive). On that subject, the Spring Framework integrates with numerous libraries and technologies directly or provides extension points so that you can integrate with the libraries you choose.
+* Easy path to upgrade: The Spring Framework always tries to provide the smoothest possible upgrade path to the next Spring version. The Spring Framework tries to have no backwards incompatible changes and to provide early warnings about deprecations. The Spring Framework also tries to provide the smoothest possible upgrade path to the next version of Java. You can use the latest Java features with Spring, but using the latest Java version is not a hard requirement. This also shows in the Spring Framework's release management: Minor versions contain new features, while major versions are often about new features and baseline upgrades, but the Spring Framework avoids breaking or otherwise drastic changes from one version to the next.
 
 === Spring: The Big Picture
 
@@ -45,18 +53,6 @@ The following image shows the major Spring projects and reveals the place of the
 image::http://www.bryantcs.com/spring.png["Projects within Spring"]
 
 {JB: Talk about "full stack" - family of projects - mention Spring Boot} If you want to jump right in and get started, we suggest using Spring Boot and creating a project with the http://start.spring.io[Spring Initializr].
-
-=== How Does Spring Work?
-
-{JB: This is the "How does it do it?" section}
-
-Spring embraces a number of core principles that have been chosen to enable rapid development of excellent applications:
-
-* Best practices: The Spring Framework uses the best practices in software development at every opportunity, which makes it easier for you to embrace best practices in your projects, too.
-* Non-invasive: The Spring Framework won't force you to adopt a particular programming style, especially if you embrace best practices.
-* Flexible: Spring supports a wide variety of application servers and deployment models and always tries to be lenient with its minimal requirements for Java version and third party libraries.
-* Open for customization: The Spring Framework has sane configuration defaults and tries not to be too opinionated (Spring Boot has stronger opinions), but it also provides extensions points and ways of customizing configuration that integrate nicely in your application. You can often implement interfaces and declare them as components to add new functionalities, or you can tweak the configuration without having to redefine/override everything (again, the Spring Framework is non-invasive). On that subject, the Spring Framework integrates with numerous libraries and technologies directly or provides extension points so that you can integrate with the libraries you choose.
-* Easy path to upgrade: The Spring Framework always tries to provide the smoothest possible upgrade path to the next Spring version. The Spring Framework tries to have no backwards incompatible changes and to provide early warnings about deprecations. The Spring Framework also tries to provide the smoothest possible upgrade path to the next version of Java. You can use the latest Java features with Spring, but using the latest Java version is not a hard requirement. This also shows in the Spring Framework's release management: Minor versions contain new features, while major versions are often about new features and baseline upgrades, but the Spring Framework avoids breaking or otherwise drastic changes from one version to the next.
 
 === Spring Framework Modules
 
@@ -72,16 +68,10 @@ The Spring Framework lets you target many different platforms. The Spring Framew
 [NOTE]
 The Spring Framework intentionally doesn't do some things, including provide help with how to deploy an application, how to manage dependencies, how to build an application, and other choices that are "beyond the code" of an application. However, Spring Boot does offer support for many of those tasks. In short, the Spring Framework focuses on letting developers create the application. Spring Boot takes things to the next level.
 
-=== Where's is Spring?
+=== Where is Spring?
 
 Github, Jira, the Questions Page, Committer's Guidelines, Coding Conventions
 
 === Questions?
 
 Spring has a  https://spring.io/questions[Stack Overflow page] where you can ask questions and find other people's questions and answers.
-
-== Next Section {JB: Kill this}
-
-{JB: My original idea was three pieces: What is it? What does it do? How does it do it? This section should answer the "How does it do it?" question. The previous part of this document should have answered the first two questions.
-
-We've gotten a start on the first two questions. The next (probably large) chunk should answer "How does it do it?" That is, we should launch into an overview of the Spring Framework's modules, the benefits of each, which ones are required or optional, and so on. }
