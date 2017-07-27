@@ -10,6 +10,7 @@ Spring includes a lot of annotations. Some are annotations created within Spring
 * <<Integration>>
 * <<Cloud>>
 * <<Data>>
+* <<Batch>>
 * <<Aspect-oriented Programming>>
 * <<Integration Testing>>
 * <<JMX>>
