@@ -406,6 +406,34 @@ http://docs.spring.io/spring-data/data-commons/docs/1.13.4.RELEASE/api/org/sprin
 http://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/query/Procedure.html[@Procedure]:: Declares a JPA 2.1 stored procedure mapping directly on a repository method.
 http://docs.spring.io/spring-framework/docs/3.2.0.M2/api/org/springframework/transaction/annotation/EnableTransactionManagement.html[@EnableTransactionManagement]:: Enables Spring's annotation-driven transaction management capability.
 
+=== Batch
+
+Spring Batch includes the following annotations:
+
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterChunk.html[@AfterChunk]:: Marks a method to be called after a chunk is executed.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterChunkError.html[@AfterChunkError]:: Marks a method to be called after a has failed and been marked for rollback.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterJob.html[@AfterJob]:: Marks a method to be called after a Job has completed.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterProcess.html[@AfterProcess]:: Marks a method to be called after an item is passed to an `ItemProcessor`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterRead.html[@AfterRead]:: Marks a method to be called after an item is read from an `ItemReader`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterStep.html[@AfterStep]:: Marks a method to be called after a `Step` has completed.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterWrite.html[@AfterWrite]:: Marks a method to be called after an item is passed to an `ItemWriter`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeChunk.html[@BeforeChunk]:: Marks a method to be called before a chunk is executed.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeJob.html[@BeforeJob]:: Marks a method to be called before a `Job` is executed, which comes after a `JobExecution` is created and persisted, but before the first `Step` is executed.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeProcess.html[@BeforeProcess]:: Marks a method to be called before an item is passed to an `ItemProcessor`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeRead.html[@BeforeRead]:: Marks a method to be called before an item is read from an `ItemReader`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeStep.html[@BeforeStep]:: Marks a method to be called before a `Step` is executed, which comes after a `StepExecution` is created and persisted, but before the first item is read.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeWrite.html[@BeforeWrite]:: Marks a method to be called before an item is passed to an `ItemWriter`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnProcessError.html[@OnProcessError]:: Marks a method to be called if an exception is thrown by an `ItemProcessor`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnReadError.html[@OnReadError]:: Marks a method to be called if an exception is thrown by an `ItemReader`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInProcess.html[@OnSkipInProcess]:: Marks a method to be called when an item is skipped due to an exception thrown in the `ItemProcessor`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInRead.html[@OnSkipInRead]:: Marks a method to be called when an item is skipped due to an exception thrown in the `ItemReader`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInWrite.html[@OnSkipInWrite]:: Marks a method to be called when an item is skipped due to an exception thrown in the `ItemWriter`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnWriteError.html[@OnWriteError]:: Marks a method to be called if an exception is thrown by an `ItemWriter`.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/EnableBatchProcessing.html[@EnableBatchProcessing]:: Enable Spring Batch features and provide a base configuration for setting up batch jobs in an `@Configuration` class, roughly equivalent to using the `<batch:*>` XML namespace.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/JobScope.html[@JobScope]:: Convenience annotation for job-scoped beans that defaults the proxy mode, so that it doesn't have to be specified explicitly on every bean definition.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/StepScope.html[@StepScope]:: Convenience annotation for step-scoped beans that defaults the proxy mode, so that it doesn't have to be specified explicitly on every bean definition.
+http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/support/annotation/Classifier.html[@Classifier]:: Mark a method as capable of classifying its input to an instance of its output.
+
 === Aspect-oriented Programming
 
 Spring includes a set of annotations for working with Aspect-oriented Programming (AOP):

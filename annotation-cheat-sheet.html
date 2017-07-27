@@ -2541,6 +2541,108 @@ Major source: <a href="https://docs.spring.io/spring/docs/current/spring-framewo
 </div>
 </div>
 <div class="sect2">
+<h3 id="_batch">Batch</h3>
+<div class="paragraph">
+<p>Spring Batch includes the following annotations:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterChunk.html">@AfterChunk</a></dt>
+<dd>
+<p>Marks a method to be called after a chunk is executed.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterChunkError.html">@AfterChunkError</a></dt>
+<dd>
+<p>Marks a method to be called after a has failed and been marked for rollback.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterJob.html">@AfterJob</a></dt>
+<dd>
+<p>Marks a method to be called after a Job has completed.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterProcess.html">@AfterProcess</a></dt>
+<dd>
+<p>Marks a method to be called after an item is passed to an <code>ItemProcessor</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterRead.html">@AfterRead</a></dt>
+<dd>
+<p>Marks a method to be called after an item is read from an <code>ItemReader</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterStep.html">@AfterStep</a></dt>
+<dd>
+<p>Marks a method to be called after a <code>Step</code> has completed.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/AfterWrite.html">@AfterWrite</a></dt>
+<dd>
+<p>Marks a method to be called after an item is passed to an <code>ItemWriter</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeChunk.html">@BeforeChunk</a></dt>
+<dd>
+<p>Marks a method to be called before a chunk is executed.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeJob.html">@BeforeJob</a></dt>
+<dd>
+<p>Marks a method to be called before a <code>Job</code> is executed, which comes after a <code>JobExecution</code> is created and persisted, but before the first <code>Step</code> is executed.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeProcess.html">@BeforeProcess</a></dt>
+<dd>
+<p>Marks a method to be called before an item is passed to an <code>ItemProcessor</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeRead.html">@BeforeRead</a></dt>
+<dd>
+<p>Marks a method to be called before an item is read from an <code>ItemReader</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeStep.html">@BeforeStep</a></dt>
+<dd>
+<p>Marks a method to be called before a <code>Step</code> is executed, which comes after a <code>StepExecution</code> is created and persisted, but before the first item is read.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/BeforeWrite.html">@BeforeWrite</a></dt>
+<dd>
+<p>Marks a method to be called before an item is passed to an <code>ItemWriter</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnProcessError.html">@OnProcessError</a></dt>
+<dd>
+<p>Marks a method to be called if an exception is thrown by an <code>ItemProcessor</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnReadError.html">@OnReadError</a></dt>
+<dd>
+<p>Marks a method to be called if an exception is thrown by an <code>ItemReader</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInProcess.html">@OnSkipInProcess</a></dt>
+<dd>
+<p>Marks a method to be called when an item is skipped due to an exception thrown in the <code>ItemProcessor</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInRead.html">@OnSkipInRead</a></dt>
+<dd>
+<p>Marks a method to be called when an item is skipped due to an exception thrown in the <code>ItemReader</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnSkipInWrite.html">@OnSkipInWrite</a></dt>
+<dd>
+<p>Marks a method to be called when an item is skipped due to an exception thrown in the <code>ItemWriter</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/annotation/OnWriteError.html">@OnWriteError</a></dt>
+<dd>
+<p>Marks a method to be called if an exception is thrown by an <code>ItemWriter</code>.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/EnableBatchProcessing.html">@EnableBatchProcessing</a></dt>
+<dd>
+<p>Enable Spring Batch features and provide a base configuration for setting up batch jobs in an <code>@Configuration</code> class, roughly equivalent to using the <code>&lt;batch:*&gt;</code> XML namespace.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/JobScope.html">@JobScope</a></dt>
+<dd>
+<p>Convenience annotation for job-scoped beans that defaults the proxy mode, so that it doesn&#8217;t have to be specified explicitly on every bean definition.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/core/configuration/annotation/StepScope.html">@StepScope</a></dt>
+<dd>
+<p>Convenience annotation for step-scoped beans that defaults the proxy mode, so that it doesn&#8217;t have to be specified explicitly on every bean definition.</p>
+</dd>
+<dt class="hdlist1"><a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/support/annotation/Classifier.html">@Classifier</a></dt>
+<dd>
+<p>Mark a method as capable of classifying its input to an instance of its output.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_aspect_oriented_programming">Aspect-oriented Programming</h3>
 <div class="paragraph">
 <p>Spring includes a set of annotations for working with Aspect-oriented Programming (AOP):</p>
@@ -3095,7 +3197,7 @@ Major source: <a href="https://docs.spring.io/spring/docs/current/spring-framewo
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-20 14:39:14 CDT
+Last updated 2017-07-27 13:39:31 CDT
 </div>
 </div>
 </body>
